@@ -29,6 +29,7 @@ body, html {
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 h1 {
