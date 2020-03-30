@@ -1,6 +1,6 @@
 window.onload = function() {
     var border = window.innerWidth*0.27;
-    var margk = window.innerWidth*0.45;
+    var margk = 0.92;
     var wrap = document.getElementById('wrapper');
     wrap.style.minHeight = window.innerHeight-48+ 'px';
     var projects = document.getElementsByClassName('project-info');
@@ -16,12 +16,12 @@ window.onload = function() {
             x = ((e.clientX/window.innerWidth)*2-1)*45;
             y = ((e.clientY/window.innerHeight)*2-1)*45;
             onetozero = Math.abs((e.clientX/(window.innerWidth-border))-1);
-            margin = (e.clientX/window.innerHeight)*margk;
+            margin = e.clientX*margk;
             margintop = Math.abs((e.clientY/(window.innerHeight))-1)*12;
             scale = onetozero;
             rotate = onetozero*45;
-            variable = onetozero*1000;
-            letter = onetozero*45;
+            //variable = onetozero*1000;
+            //letter = onetozero*45;
             linkcolor = e.clientX/(window.innerWidth-border);
             wrap.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
             if (e.clientX<window.innerWidth-border) {

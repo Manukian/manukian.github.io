@@ -110,7 +110,7 @@ a.coming-soon {
     justify-content: space-between;
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1366px) {
     #wrapper {
         font-size: 2.109vw;
         line-height: 2.188vw;
