@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'VM';
-    src: url(Sneak-Medium.otf) format('opentype');
+    src: url(Sneak-Regular.otf) format('opentype');
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     line-height: 28px;
     overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: -0.8px;
+    letter-spacing: -1px;
     font-family: 'VM';
     cursor: default;
     -webkit-font-smoothing: antialiased;
@@ -107,7 +107,7 @@ a.coming-soon {
     #wrapper {
         font-size: 2.109vw;
         line-height: 2.188vw;
-        letter-spacing: -0.0.625vw;
+        letter-spacing: -0.078vw;
     }
 }
 
@@ -115,7 +115,7 @@ a.coming-soon {
     #wrapper {
         font-size: 48px;
         line-height: 48px;
-        letter-spacing: -2.4px;
+        letter-spacing: -2px;
     }
     .project-link,.project-info {
         width: 100%;
@@ -132,7 +132,7 @@ a.coming-soon {
     #wrapper {
         font-size: 27px;
         line-height: 28px;
-        letter-spacing: -0.8px;
+        letter-spacing: -1px;
     }
     .project-link {
         margin-top: 12px;
