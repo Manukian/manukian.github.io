@@ -51,19 +51,9 @@ window.onload = function() {
     if (!isMobile){
         window.addEventListener('mousemove',animate);
     } else {
-        for (i=1; i<links.length; i++) {
-            links[i].style.marginTop = 12 + 'px';
-        }
         for (i=0; i<projects.length; i++) {
             projects[i].style.transform = 'scale(' + 1 + ')';
             projects[i].style.width = '100%';
         }
     }
-    window.onorientationchange = function() { 
-        window.onresize = function(){
-            location.reload();
-            this.console.log('f');
-        }
-    };
-    window.addEventListener('orientationchange',this.onorientationchange);
 };

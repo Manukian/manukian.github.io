@@ -109,3 +109,19 @@ a.coming-soon {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+@media (max-width: 1080px) {
+    #wrapper {
+        font-size: 48px;
+        line-height: 48px;
+    }
+    .project-link,.project-info {
+        width: 100%;
+    }
+    .project-link {
+        margin-top: 24px;
+    }
+    .projects {
+        margin-top: 0;
+    }
+}
