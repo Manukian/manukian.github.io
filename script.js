@@ -1,6 +1,6 @@
 window.onload = function() {
     var border = window.innerWidth*0.26;
-    var margk = 0.92;
+    var margk = 0.95;
     var margtopk = window.innerHeight*0.02;
     var wrap = document.getElementById('wrapper');
     wrap.style.minHeight = window.innerHeight-48+ 'px';
@@ -45,6 +45,8 @@ window.onload = function() {
                     links[i].style.transform = 'rotate(' + 0 + 'deg)';
                     links[i].style.width = '100%';
                 }
+                wrap.style.marginLeft = (window.innerWidth-border)*margk + 'px';
+                console.log(wrap.innerWidth);
                 //role.style.letterSpacing = - 0.4 + 'px';
                 //name.style.color = 'rgb(1,153,68)';
             }
