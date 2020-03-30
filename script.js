@@ -1,5 +1,6 @@
 window.onload = function() {
-    var border = 350;
+    var border = window.innerWidth*0.27;
+    var margk = window.innerWidth*0.45;
     var wrap = document.getElementById('wrapper');
     wrap.style.minHeight = window.innerHeight-48+ 'px';
     var projects = document.getElementsByClassName('project-info');
@@ -15,7 +16,7 @@ window.onload = function() {
             x = ((e.clientX/window.innerWidth)*2-1)*45;
             y = ((e.clientY/window.innerHeight)*2-1)*45;
             onetozero = Math.abs((e.clientX/(window.innerWidth-border))-1);
-            margin = (e.clientX/window.innerHeight)*580;
+            margin = (e.clientX/window.innerHeight)*margk;
             margintop = Math.abs((e.clientY/(window.innerHeight))-1)*12;
             scale = onetozero;
             rotate = onetozero*45;
@@ -53,7 +54,7 @@ window.onload = function() {
     } else {
         for (i=0; i<projects.length; i++) {
             projects[i].style.transform = 'scale(' + 1 + ')';
-            projects[i].style.width = '100%';
+            //projects[i].style.width = '100%';
         }
     }
 };
