@@ -59,5 +59,11 @@ window.onload = function() {
             projects[i].style.width = '100%';
         }
     }
-    window.onresize = function(){ location.reload(); }
+    window.onorientationchange = function() { 
+        window.onresize = function(){
+            location.reload();
+            this.console.log('f');
+        }
+    };
+    window.addEventListener('orientationchange',this.onorientationchange);
 };
