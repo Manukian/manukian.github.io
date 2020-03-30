@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'VM';
+    src: url(Sneak-Regular.otf) format('opentype');
+}
+
+body {
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    font-size: 27px;
+    line-height: 28px;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: -0.8px;
+    font-family: 'VM';
+    cursor: default;
+}
+
+.ba {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    height: 48px;
+    z-index: 1;
+    background-color: black;
+    color: white;
+}
+
+.before {
+    flex-grow: 1;
+    padding: 12px 24px;
+}
+
+.after {
+    flex-grow: 1;
+    padding: 12px 24px;
+}
+
+#wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-info {
+    margin: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#name {
+    margin-right: 24px;
+    text-transform: uppercase;
+}
+
+#role {
+    
+}
+
+.projects {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.project-link {
+    margin: 0 24px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+  
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #003CFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.coming-soon {
+    cursor: default;
+    text-decoration: none;
+}
+
+.project-info {
+    margin: 0 24px;
+}
+
+.contacts {
+    margin: 36px 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
