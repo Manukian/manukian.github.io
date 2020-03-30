@@ -125,3 +125,13 @@ a.coming-soon {
         margin-top: 0;
     }
 }
+
+@media (max-width: 600px) {
+    #wrapper {
+        font-size: 27px;
+        line-height: 28px;
+    }
+    .project-link {
+        margin-top: 12px;
+    }
+}
