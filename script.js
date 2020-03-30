@@ -58,5 +58,14 @@ window.onload = function() {
 
     } else {
         window.addEventListener('mousemove',animate);
+        document.addEventListener('mouseleave',function(){
+            wrap.style.opacity = '0.1';
+            wrap.style.transition = 'opacity 0.3s';
+        });
+    
+        document.addEventListener('mouseenter',function(){
+            wrap.style.opacity = '1';
+            wrap.style.transition = 'opacity 0.6s';
+        });
     }
 };
