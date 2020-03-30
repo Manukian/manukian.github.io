@@ -1,6 +1,7 @@
 window.onload = function() {
     var border = window.innerWidth*0.27;
     var margk = 0.92;
+    var margtopk = window.innerHeight*0.02;
     var wrap = document.getElementById('wrapper');
     wrap.style.minHeight = window.innerHeight-48+ 'px';
     var projects = document.getElementsByClassName('project-info');
@@ -17,7 +18,7 @@ window.onload = function() {
             y = ((e.clientY/window.innerHeight)*2-1)*45;
             onetozero = Math.abs((e.clientX/(window.innerWidth-border))-1);
             margin = e.clientX*margk;
-            margintop = Math.abs((e.clientY/(window.innerHeight))-1)*12;
+            margintop = Math.abs((e.clientY/(window.innerHeight))-1)*margtopk;
             scale = onetozero;
             rotate = onetozero*45;
             //variable = onetozero*1000;
