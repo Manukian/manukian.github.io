@@ -54,12 +54,9 @@ window.onload = function() {
     }
 
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (!isMobile){
-        window.addEventListener('mousemove',animate);
+    if (isMobile || (window.innerWidth < 1080)){
+
     } else {
-        for (i=0; i<projects.length; i++) {
-            projects[i].style.transform = 'scale(' + 1 + ')';
-            //projects[i].style.width = '100%';
-        }
+        window.addEventListener('mousemove',animate);
     }
 };
