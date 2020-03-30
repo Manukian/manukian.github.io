@@ -96,6 +96,14 @@ a.coming-soon {
     align-self: center;
 }
 
+.black-link {
+    color: black;
+}
+
+.black-link:hover {
+    text-decoration: none;
+}
+
 .contacts {
     margin: 36px 24px 0;
     display: flex;
