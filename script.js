@@ -48,7 +48,6 @@ window.onload = function() {
                 //role.style.letterSpacing = - 0.4 + 'px';
                 //name.style.color = 'rgb(1,153,68)';
             }
-            
             //name.style["font-variation-settings"] = "'wght' " + variable;
     }
 
