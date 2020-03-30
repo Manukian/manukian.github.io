@@ -59,5 +59,5 @@ window.onload = function() {
             projects[i].style.width = '100%';
         }
     }
-
+    window.onresize = function(){ location.reload(); }
 };
