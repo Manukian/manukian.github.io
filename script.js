@@ -1,5 +1,5 @@
 window.onload = function() {
-    var border = window.innerWidth*0.27;
+    var border = window.innerWidth*0.26;
     var margk = 0.92;
     var margtopk = window.innerHeight*0.02;
     var wrap = document.getElementById('wrapper');
@@ -32,7 +32,9 @@ window.onload = function() {
                 for (i=0; i<links.length; i++) {
                     links[i].style.transform = 'rotate(' + (rotate/i) + 'deg)';
                     links[i].style.marginTop =  margintop + 'px';
+                    links[i].style.width = 'auto';
                 }
+                wrap.style.marginLeft = margin + 'px';
                 //role.style.letterSpacing = letter - 0.4 + 'px';
                 //name.style.color = 'rgb(' + changecol(1,198) + ', ' + changecol(153,1) + ', ' + changecol(68,131) + ')';
             } else {
@@ -41,11 +43,12 @@ window.onload = function() {
                 }
                 for (i=0; i<links.length; i++) {
                     links[i].style.transform = 'rotate(' + 0 + 'deg)';
+                    links[i].style.width = '100%';
                 }
                 //role.style.letterSpacing = - 0.4 + 'px';
                 //name.style.color = 'rgb(1,153,68)';
             }
-            wrap.style.marginLeft = margin + 'px';
+            
             //name.style["font-variation-settings"] = "'wght' " + variable;
     }
 
