@@ -90,7 +90,7 @@ window.onload = function() {
 
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile || (window.innerWidth < 1080)){
-        window.addEventListener('touchmove',touchanimate);
+        //window.addEventListener('touchmove',touchanimate);
     } else {
         window.addEventListener('mousemove',animate);
         document.addEventListener('mouseleave',function(){
