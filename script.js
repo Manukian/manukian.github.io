@@ -54,6 +54,7 @@ window.onload = function() {
     }
 
     var touchanimate = function(e) {
+        e.preventDefault();
         var touch = e.touches[0];
         x = ((touch.clientX/window.innerWidth)*2-1)*45;
         y = ((touch.clientY/window.innerHeight)*2-1)*45;
