@@ -43,19 +43,19 @@ window.onload = function() {
     }
 
     var borderTouch = window.innerWidth*0.25;
-    var margkTouch = 0.8;
+    var margkTouch = 1;
     var leftSide = 100;
 
     var touchanimate = function(e) {
         var touch = e.touches[0];
         x = ((touch.clientX/window.innerWidth)*2-1)*45;
         y = ((touch.clientY/window.innerHeight)*2-1)*45;
-        zerotoone = (touch.clientX-leftSide)/(window.innerWidth-borderTouch);
+        zerotoone = (touch.clientX-leftSide)/(window.innerWidth-borderTouch-leftSide);
         margin = (touch.clientX-leftSide)*margkTouch;
         margintop = touch.clientY/(window.innerHeight)*margtopk;
         scale = zerotoone;
         rotate = zerotoone*45;
-        wrap.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
+        //wrap.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
         if (touch.clientX <= leftSide) {
             for (i=0; i<projects.length; i++) {
                 projects[i].style.transform = 'scale(' + 1 + ')';
