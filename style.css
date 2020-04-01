@@ -63,10 +63,11 @@ body {
 #name {
     margin-right: 24px;
     text-transform: uppercase;
+    display: inline-block;
 }
 
 #role {
-    
+    display: inline-block; 
 }
 
 .projects {
@@ -84,6 +85,7 @@ body {
 a {
     text-decoration: none;
     color: #003CFF;
+    display: inline-block;
 }
 
 a:hover {
@@ -102,6 +104,7 @@ a.coming-soon {
 
 .black-link {
     color: black;
+    display: inline;
 }
 
 .black-link:hover {
@@ -152,8 +155,16 @@ a.coming-soon {
         line-height: 48px;
         letter-spacing: -2px;
     }
-    .project-link,.project-info {
+    .project-link, .project-info, #name, #role  {
         width: 100%;
+        overflow-x: hidden;
+        white-space: pre-wrap;
+        text-overflow: ellipsis;
+    }
+    a {
+        overflow-x: hidden;
+        white-space: pre-wrap;
+        text-overflow: ellipsis;
     }
     .project-link {
         margin-top: 24px;
@@ -170,6 +181,9 @@ a.coming-soon {
         letter-spacing: -1px;
     }
     .project-link {
+        margin-top: 12px;
+    }
+    .contacts {
         margin-top: 12px;
     }
 }

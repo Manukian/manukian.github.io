@@ -6,10 +6,9 @@ window.onload = function() {
     wrap.style.minHeight = window.innerHeight-48+ 'px';
     var projects = document.getElementsByClassName('project-info');
     var links = document.getElementsByClassName('project-link');
-
-    changecol = function(input,output){
-        return ((input - output)*linkcolor + output);
-    }
+    var maininfo = document.getElementsByClassName('main-info');
+    var contacts = document.getElementsByClassName('contacts');
+    var social = document.getElementsByClassName('social');
 
     var animate = function(e) {
             x = ((e.clientX/window.innerWidth)*2-1)*45;
@@ -44,7 +43,7 @@ window.onload = function() {
 
     var borderTouch = window.innerWidth*0.25;
     var margkTouch = 1;
-    var leftSide = 50;
+    var leftSide = window.innerWidth*0.2;
 
     var touchanimate = function(e) {
         var touch = e.touches[0];
@@ -60,33 +59,40 @@ window.onload = function() {
         }
         //wrap.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
         if (touch.clientX <= leftSide) {
-            for (i=0; i<projects.length; i++) {
-                projects[i].style.transform = 'scale(' + 1 + ')';
-            }
-            for (i=0; i<links.length; i++) {
-                links[i].style.transform = 'rotate(' + 0 + 'deg)';
-                links[i].style.width = '100%';
-            }
+            // for (i=0; i<projects.length; i++) {
+            //     projects[i].style.transform = 'scale(' + 1 + ')';
+            // }
+            // for (i=0; i<links.length; i++) {
+            //     links[i].style.transform = 'rotate(' + 0 + 'deg)';
+            //     links[i].style.width = '100%';
+            // }
             wrap.style.marginLeft = 0 + 'px';
         }
         if ((leftSide < touch.clientX) && (touch.clientX < window.innerWidth-borderTouch)) {
             for (i=0; i<projects.length; i++) {
-                projects[i].style.transform = 'scale(' + (scale/i + 1) + ')';
+                // projects[i].style.transform = 'scale(' + (scale/i + 1) + ')';
+                projects[i].style.width = window.innerWidth - margin-48 + 'px';
             }
             for (i=0; i<links.length; i++) {
-                links[i].style.transform = 'rotate(' + (rotate/i) + 'deg)';
+                // links[i].style.transform = 'rotate(' + (rotate/i) + 'deg)';
                 links[i].style.width = 'auto';
+                links[i].style.width = window.innerWidth - margin-48 + 'px';
             }
             wrap.style.marginLeft = margin + 'px';
+            maininfo[0].style.width = window.innerWidth - margin-48 + 'px';
+            contacts[0].style.width = window.innerWidth - margin-48 + 'px';
+            social[0].children[0].style.width = window.innerWidth - margin-48 + 'px';
+            social[0].children[1].style.width = window.innerWidth - margin-48 + 'px';
         }
         if (touch.clientX > window.innerWidth-borderTouch) {
             wrap.style.marginLeft = (window.innerWidth-borderTouch-leftSide)*margkTouch + 'px';
         }
+        
 }
 
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile || (window.innerWidth < 1080)){
-        wrap.classList.add('break');
+        //wrap.classList.add('break');
         document.documentElement.style.overflowY = 'hidden';
         window.addEventListener('touchmove',touchanimate);
     } else {
