@@ -3,6 +3,10 @@
     src: url(Sneak-Regular.otf) format('opentype');
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     padding: 24px 0;
