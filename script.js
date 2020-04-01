@@ -43,10 +43,11 @@ window.onload = function() {
     }
 
     var borderTouch = window.innerHeight*0;
-    var margkTouch = 0.6;
+    var margkTouch = 0.4;
     var topSide = 200;
 
     var touchanimate = function(e) {
+        e.preventDefault();
         var touch = e.touches[0];
         x = ((touch.clientX/window.innerWidth)*2-1)*45;
         y = ((touch.clientY/window.innerHeight)*2-1)*45;
