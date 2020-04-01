@@ -43,34 +43,42 @@ window.onload = function() {
     }
 
     var borderTouch = window.innerWidth*0.25;
-    var margkTouch = 0.7;
+    var margkTouch = 0.8;
+    var leftSide = 100;
 
     var touchanimate = function(e) {
         var touch = e.touches[0];
-        zerotoone = touch.clientX/(window.innerWidth-borderTouch);
-        margin = touch.clientX*margkTouch;
+        x = ((touch.clientX/window.innerWidth)*2-1)*45;
+        y = ((touch.clientY/window.innerHeight)*2-1)*45;
+        zerotoone = (touch.clientX-leftSide)/(window.innerWidth-borderTouch);
+        margin = (touch.clientX-leftSide)*margkTouch;
         margintop = touch.clientY/(window.innerHeight)*margtopk;
         scale = zerotoone;
         rotate = zerotoone*45;
-        if (touch.clientX < window.innerWidth-borderTouch) {
+        wrap.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
+        if (touch.clientX <= leftSide) {
             for (i=0; i<projects.length; i++) {
-                projects[i].style.transform = 'scale(' + (scale/(i+1) + 1) + ')';
+                projects[i].style.transform = 'scale(' + 1 + ')';
             }
             for (i=0; i<links.length; i++) {
-                links[i].style.transform = 'rotate(' + (rotate/(i+1)) + 'deg)';
+                links[i].style.transform = 'rotate(' + 0 + 'deg)';
+                links[i].style.width = '100%';
+            }
+            wrap.style.marginLeft = 0 + 'px';
+        }
+        if ((leftSide < touch.clientX) && (touch.clientX < window.innerWidth-borderTouch)) {
+            for (i=0; i<projects.length; i++) {
+                projects[i].style.transform = 'scale(' + (scale/i + 1) + ')';
+            }
+            for (i=0; i<links.length; i++) {
+                links[i].style.transform = 'rotate(' + (rotate/i) + 'deg)';
                 links[i].style.marginTop =  margintop + 'px';
                 links[i].style.width = 'auto';
             }
             wrap.style.marginLeft = margin + 'px';
-        } else {
-            // for (i=0; i<projects.length; i++) {
-            //     projects[i].style.transform = 'scale(' + 1 + ')';
-            // }
-            // for (i=0; i<links.length; i++) {
-            //     links[i].style.transform = 'rotate(' + 0 + 'deg)';
-            //     links[i].style.width = '100%';
-            // }
-            wrap.style.marginLeft = (window.innerWidth-border)*margkTouch + 'px';
+        }
+        if (touch.clientX > window.innerWidth-borderTouch) {
+            wrap.style.marginLeft = (window.innerWidth-borderTouch-leftSide)*margkTouch + 'px';
         }
 }
 

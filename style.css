@@ -116,7 +116,11 @@ a.coming-soon {
 }
 
 .break {
-
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -o-transform-origin: 100% 0;
+    -ms-transform-origin: 100% 0;
+    transform-origin: 50% 0;
     /* These are technically the same, but use both */
     overflow-wrap: break-word;
     word-wrap: break-word;
