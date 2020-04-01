@@ -42,31 +42,32 @@ window.onload = function() {
             }
     }
 
-    var borderTouch = window.innerWidth*0.25;
-    var margkTouch = 1;
-    var leftSide = 100;
+    var borderTouch = window.innerHeight*0;
+    var margkTouch = 0.6;
+    var topSide = 200;
 
     var touchanimate = function(e) {
         var touch = e.touches[0];
         x = ((touch.clientX/window.innerWidth)*2-1)*45;
         y = ((touch.clientY/window.innerHeight)*2-1)*45;
-        zerotoone = (touch.clientY-leftSide)/(window.innerWidth-borderTouch-leftSide);
-        margin = (touch.clientY-leftSide)*margkTouch;
-        margintop = touch.clientY/(window.innerHeight)*margtopk;
+        zerotoone = (touch.clientY-topSide)/(window.innerHeight-borderTouch-topSide);
+        margin = (touch.clientY-topSide)*margkTouch;
+        margintop = touch.clientX/(window.innerWidth)*margtopk;
         scale = zerotoone;
         rotate = zerotoone*45;
         //wrap.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
-        if (touch.clientY <= leftSide) {
+        if (touch.clientY <= topSide) {
             for (i=0; i<projects.length; i++) {
                 projects[i].style.transform = 'scale(' + 1 + ')';
             }
             for (i=0; i<links.length; i++) {
                 links[i].style.transform = 'rotate(' + 0 + 'deg)';
+                links[i].style.marginTop =  margintop + 'px';
                 links[i].style.width = '100%';
             }
             wrap.style.marginLeft = 0 + 'px';
         }
-        if ((leftSide < touch.clientY) && (touch.clientY < window.innerWidth-borderTouch)) {
+        if ((topSide < touch.clientY) && (touch.clientY < window.innerHeight-borderTouch)) {
             for (i=0; i<projects.length; i++) {
                 projects[i].style.transform = 'scale(' + (scale/i + 1) + ')';
             }
@@ -77,8 +78,8 @@ window.onload = function() {
             }
             wrap.style.marginLeft = margin + 'px';
         }
-        if (touch.clientY > window.innerWidth-borderTouch) {
-            wrap.style.marginLeft = (window.innerWidth-borderTouch-leftSide)*margkTouch + 'px';
+        if (touch.clientY > window.innerHeight-borderTouch) {
+            wrap.style.marginLeft = (window.innerHeight-borderTouch-topSide)*margkTouch + 'px';
         }
 }
 
