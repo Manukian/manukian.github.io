@@ -50,13 +50,13 @@ window.onload = function() {
         var touch = e.touches[0];
         x = ((touch.clientX/window.innerWidth)*2-1)*45;
         y = ((touch.clientY/window.innerHeight)*2-1)*45;
-        zerotoone = (touch.clientX-leftSide)/(window.innerWidth-borderTouch-leftSide);
-        margin = (touch.clientX-leftSide)*margkTouch;
+        zerotoone = (touch.clientY-leftSide)/(window.innerWidth-borderTouch-leftSide);
+        margin = (touch.clientY-leftSide)*margkTouch;
         margintop = touch.clientY/(window.innerHeight)*margtopk;
         scale = zerotoone;
         rotate = zerotoone*45;
         //wrap.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
-        if (touch.clientX <= leftSide) {
+        if (touch.clientY <= leftSide) {
             for (i=0; i<projects.length; i++) {
                 projects[i].style.transform = 'scale(' + 1 + ')';
             }
@@ -66,7 +66,7 @@ window.onload = function() {
             }
             wrap.style.marginLeft = 0 + 'px';
         }
-        if ((leftSide < touch.clientX) && (touch.clientX < window.innerWidth-borderTouch)) {
+        if ((leftSide < touch.clientY) && (touch.clientY < window.innerWidth-borderTouch)) {
             for (i=0; i<projects.length; i++) {
                 projects[i].style.transform = 'scale(' + (scale/i + 1) + ')';
             }
@@ -77,7 +77,7 @@ window.onload = function() {
             }
             wrap.style.marginLeft = margin + 'px';
         }
-        if (touch.clientX > window.innerWidth-borderTouch) {
+        if (touch.clientY > window.innerWidth-borderTouch) {
             wrap.style.marginLeft = (window.innerWidth-borderTouch-leftSide)*margkTouch + 'px';
         }
 }
