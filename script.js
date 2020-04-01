@@ -69,11 +69,11 @@ window.onload = function() {
         }
         if ((leftSide < touch.clientX) && (touch.clientX < window.innerWidth-borderTouch)) {
             for (i=0; i<projects.length; i++) {
-                // projects[i].style.transform = 'scale(' + (scale/i + 1) + ')';
+                projects[i].style.transform = 'scale(' + (scale/i + 1) + ')';
                 projects[i].style.width = window.innerWidth - margin-48 + 'px';
             }
             for (i=0; i<links.length; i++) {
-                // links[i].style.transform = 'rotate(' + (rotate/i) + 'deg)';
+                links[i].style.transform = 'rotate(' + (rotate/i) + 'deg)';
                 links[i].style.width = 'auto';
                 links[i].style.width = window.innerWidth - margin-48 + 'px';
             }
@@ -88,7 +88,7 @@ window.onload = function() {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile || (window.innerWidth < 1080)){
         wrap.classList.add('break');
-        document.documentElement.style.overflowY = 'hidden';
+        // document.documentElement.style.overflowY = 'hidden';
         window.addEventListener('touchmove',touchanimate);
     } else {
         window.addEventListener('mousemove',animate);
