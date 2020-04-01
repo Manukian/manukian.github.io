@@ -1,7 +1,7 @@
 window.onload = function() {
     var border = window.innerWidth*0.26;
     var margk = 0.95;
-    var margtopk = window.innerHeight*0.02;
+    var margtopk = window.innerHeight*0.03;
     var wrap = document.getElementById('wrapper');
     wrap.style.minHeight = window.innerHeight-48+ 'px';
     var projects = document.getElementsByClassName('project-info');
@@ -43,6 +43,38 @@ window.onload = function() {
     var borderTouch = window.innerWidth*0.25;
     var margkTouch = 1;
     var leftSide = window.innerWidth*0.2;
+
+    var touchanimate2 = function(e) {
+        var touch = e.touches[0];
+        x = ((touch.clientX/window.innerWidth)*2-1)*45;
+        y = ((touch.clientY/window.innerHeight)*2-1)*45;
+        onetozero = Math.abs((touch.clientX/(window.innerWidth-border))-1);
+        margin = touch.clientX*margk;
+        margintop = Math.abs((touch.clientY/(window.innerHeight))-1)*margtopk;
+        scale = onetozero;
+        rotate = onetozero*45;
+        wrap.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
+        if (touch.clientX < window.innerWidth-border) {
+            for (i=0; i<projects.length; i++) {
+                projects[i].style.transform = 'scale(' + (scale/i + 1) + ')';
+            }
+            for (i=0; i<links.length; i++) {
+                links[i].style.transform = 'rotate(' + (rotate/i) + 'deg)';
+                links[i].style.marginTop =  margintop + 'px';
+                links[i].style.width = 'auto';
+            }
+            wrap.style.marginLeft = margin + 'px';
+        } else {
+            for (i=0; i<projects.length; i++) {
+                projects[i].style.transform = 'scale(' + 1 + ')';
+            }
+            for (i=0; i<links.length; i++) {
+                links[i].style.transform = 'rotate(' + 0 + 'deg)';
+                links[i].style.width = '100%';
+            }
+            wrap.style.marginLeft = (window.innerWidth-border)*margk + 'px';
+        }
+}
 
     var touchanimate = function(e) {
         var touch = e.touches[0];
@@ -87,9 +119,9 @@ window.onload = function() {
 
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile || (window.innerWidth < 1080)){
-        wrap.classList.add('break');
+        //wrap.classList.add('break');
         // document.documentElement.style.overflowY = 'hidden';
-        window.addEventListener('touchmove',touchanimate);
+        window.addEventListener('touchmove',touchanimate2);
     } else {
         window.addEventListener('mousemove',animate);
         document.addEventListener('mouseleave',function(){
