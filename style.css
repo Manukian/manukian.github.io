@@ -109,29 +109,6 @@ a.coming-soon {
     justify-content: space-between;
 }
 
-.break {
-    -webkit-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    transform-origin: 0 0;
-    /* These are technically the same, but use both */
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-  
-    -ms-word-break: break-all;
-    /* This is the dangerous one in WebKit, as it breaks things wherever */
-    word-break: break-all;
-    /* Instead use this non-standard one: */
-    word-break: break-word;
-  
-    /* Adds a hyphen where the word breaks, if supported (No Blink) */
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-  }
-
 @media (min-width: 1366px) {
     #wrapper {
         font-size: 1.953vw;
@@ -140,3 +117,28 @@ a.coming-soon {
     }
 }
 
+@media (max-width: 1080px) {
+    #wrapper {
+        font-size: 25px;
+        line-height: 28px;
+        letter-spacing: -0.8px;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    .projects {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    #wrapper {
+        font-size: 25px;
+        line-height: 28px;
+        letter-spacing: -0.8px;
+    }
+    .project-link {
+        margin-top: 24px;
+        width: 100%;
+    }
+}
