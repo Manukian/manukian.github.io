@@ -104,6 +104,14 @@ a.coming-soon {
     justify-content: space-between;
 }
 
+.contacts>a {
+    margin-right: 24px;
+}
+
+.social {
+    margin-right: 24px;
+}
+
 @media (min-width: 1366px) {
     #wrapper {
         font-size: 1.953vw;

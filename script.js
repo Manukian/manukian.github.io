@@ -94,7 +94,6 @@ window.onload = function() {
         }
         window.addEventListener('touchmove',touchanimate);
     } else {
-        //wrap.style.opacity = '0';
         window.addEventListener('mousemove',animate);
         document.addEventListener('mouseleave',function(){
             wrap.style.opacity = '0.1';
