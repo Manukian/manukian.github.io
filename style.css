@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Unica';
     font-weight: bold;
-    src: url('Unica77LL-Bold.otf') format('opentype');
+    src: url('Arial Rounded Bold.ttf') format('opentype');
 }
 
 * {
@@ -28,11 +28,11 @@ body {
     text-rendering: optimizeLegibility;
     text-shadow: 0px 0px 1px rgba(0,0,0,0.004);
     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
-    padding: 18px 0 4px;
+    padding: 24px;
     font-size: 25px;
     line-height: 28px;
     overflow-x: hidden;
-    font-family: 'Unica';
+    font-family: 'Arial';
     letter-spacing: -0.8px;
     cursor: default;
     background-color: white;
@@ -52,16 +52,13 @@ body::-webkit-scrollbar {
 }
 
 .main-info {
-    margin: 0 12px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: 40px;
-    line-height: 36px;
 }
 
 #name {
-    margin-right: 12px;
+    margin-right: 24px;
 }
 
 .projects {
@@ -72,12 +69,11 @@ body::-webkit-scrollbar {
 }
 
 .project-link {
-    margin: 0 12px;
+    margin-right: 24px;
     align-self: center;
-    padding: 2px 4px 0px;
-    color: white;
-    background-color: red;
-    color: white;
+    /* padding: 2px 4px 0px;
+    background-color: white; */
+    color: blue;
     z-index: 100;
 }
 
@@ -86,8 +82,8 @@ a {
     color: inherit;
 }
 
-a:hover::before {
-    content: '▲ ';
+a:hover {
+    text-decoration: underline;
 }
 
 a.coming-soon {
@@ -96,9 +92,9 @@ a.coming-soon {
 }
 
 .project-info {
-    margin: 0 12px;
+    margin-right: 24px;
     align-self: center;
-    padding: 3px 4px 0px;
+    /* padding: 3px 4px 0px; */
 }
 
 .black-link {
@@ -110,7 +106,7 @@ a.coming-soon {
 }
 
 .contacts {
-    margin: 36px 12px 0;
+    margin-top: 24px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -138,33 +134,22 @@ a.coming-soon {
     }
 }
 
-@media (max-width: 1080px) {
-    #wrapper {
-        font-size: 25px;
-        line-height: 28px;
-        letter-spacing: -0.8px;
-    }
-    a:hover {
-        text-decoration: none;
-    }
-}
-
 @media (max-width: 600px) {
     #wrapper {
         font-size: 25px;
         line-height: 28px;
         letter-spacing: -0.8px;
     }
+    .projects {
+        margin-top: 0;
+    }
+    
     .project-link {
         width: 100%;
+        margin-top: 24px;
     }
 
-    .main-info {
-        font-size: 40px;
-        line-height: 36px;
-        margin-bottom: 24px;
-    }
-    a:hover::before {
-        content: '';
+    a:hover {
+        text-decoration: none;
     }
 }

@@ -3,7 +3,7 @@ window.onload = function() {
     var margk = 0.95;
     var margtopk = window.innerHeight*0.03;
     var wrap = document.getElementById('wrapper');
-    wrap.style.minHeight = window.innerHeight-22+ 'px';
+    wrap.style.minHeight = window.innerHeight-48+ 'px';
     var projects = document.getElementsByClassName('project-info');
     var links = document.getElementsByClassName('project-link');
 
