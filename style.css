@@ -27,6 +27,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     text-shadow: 0px 0px 1px rgba(0,0,0,0.004);
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
     padding: 18px 0 4px;
     font-size: 25px;
     line-height: 28px;
