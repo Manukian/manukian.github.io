@@ -35,8 +35,8 @@ body {
     font-family: 'Unica';
     letter-spacing: -0.8px;
     cursor: default;
-    background-color: blue;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 body::-webkit-scrollbar {
@@ -76,8 +76,8 @@ body::-webkit-scrollbar {
     align-self: center;
     padding: 2px 4px 0px;
     color: white;
-    background-color: white;
-    color: blue;
+    background-color: red;
+    color: white;
     z-index: 100;
 }
 
@@ -124,6 +124,12 @@ a.coming-soon {
     margin-right: 24px;
 }
 
+.soon {
+    font-size: 14px;
+    letter-spacing: -0.4px;
+    opacity: 0.5;
+}
+
 @media (min-width: 1366px) {
     #wrapper {
         font-size: 1.953vw;
@@ -141,9 +147,6 @@ a.coming-soon {
     a:hover {
         text-decoration: none;
     }
-    .projects {
-        margin-top: 0;
-    }
 }
 
 @media (max-width: 600px) {
@@ -153,7 +156,6 @@ a.coming-soon {
         letter-spacing: -0.8px;
     }
     .project-link {
-        margin-top: 0px;
         width: 100%;
     }
 
