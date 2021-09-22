@@ -161,4 +161,7 @@ a.coming-soon {
         line-height: 36px;
         margin-bottom: 24px;
     }
+    a:hover::before {
+        content: '';
+    }
 }
