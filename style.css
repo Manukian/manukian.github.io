@@ -23,7 +23,7 @@ body {
     text-shadow: 0px 0px 1px rgba(0,0,0,0.004);
     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
     padding: 24px;
-    font-size: 25px;
+    font-size: 24px;
     line-height: 28px;
     overflow-x: hidden;
     font-family: 'Arial';
@@ -120,6 +120,42 @@ a.coming-soon {
     opacity: 0.5;
 }
 
+.timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    margin-top: -16px;
+    left: 24px;
+    right: 24px;
+    pointer-events: none;
+}
+
+.line {
+    width: 100%;
+    background: #ccc;
+    height: 8px;
+    margin-left: 12px;
+    position: relative;
+}
+
+.line-text {
+    position: absolute;
+    font-size: 12px;
+    color: white;
+}
+
+.point {
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 24px solid #ccc;
+    margin-right: 12px;
+}
+
 @media (min-width: 1366px) {
     #wrapper {
         font-size: 1.953vw;
@@ -130,7 +166,7 @@ a.coming-soon {
 
 @media (max-width: 600px) {
     #wrapper {
-        font-size: 25px;
+        font-size: 24px;
         line-height: 28px;
         letter-spacing: -0.8px;
     }
@@ -145,5 +181,11 @@ a.coming-soon {
 
     a:hover {
         text-decoration: none;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 600px) {
+    .timeline {
+        display: none;
     }
 }
